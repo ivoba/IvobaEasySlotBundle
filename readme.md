@@ -1,27 +1,23 @@
 EasySlotBundle
 ---------------
+jqueryUI driven Accordion CRUD UI for simple form based objects,  
 stores a simple collection of objects serialized in a file
 
-needs write access on storeDir: ivoba_easy_slot.store.dir  
 
-dependencies:
- assetic
- twig
+###configuration:  
+needs write access on storeDir  
+path can be configured in parameter: ivoba_easy_slot.store.dir 
 
-installation:
- composer
+import routing in your routing file:
 
-configutation:
- routings
-_easyslot:
-    resource: "@IvobaEasySlotBundle/Resources/config/routing.yml"
-    prefix:   /easyslot
+    _easyslot:
+       resource: "@IvobaEasySlotBundle/Resources/config/routing.yml"
+       prefix:   /easyslot
 
- assetic whitelist
- data dir
+add bundle to your assetic whitelist in config.yml
 
-assets:install
+     bundles: [ IvobaEasySlotBundle ]
+
+assets:install  
 in prod run assetic:dump
-
-
 

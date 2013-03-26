@@ -1,0 +1,25 @@
+{
+    "name": "ivoba/easy-slot-bundle",
+    "type": "symfony-bundle",
+    "description": "Accordion CRUD UI for simple form objects",
+    "keywords": ["crud", "symfony"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ivo Bathke",
+            "email": "ivo.bathke@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.3",
+        "symfony/symfony": ">=2.1.5, <2.2-dev",
+        "twig/extensions": "1.0.*@dev",
+        "symfony/assetic-bundle": "2.1.*"
+    },
+    "autoload": {
+        "psr-0": {
+            "Ivoba\\EasySlotBundle": ""
+        }
+    },
+    "target-dir": "Ivoba/EasySlotBundle"
+}
