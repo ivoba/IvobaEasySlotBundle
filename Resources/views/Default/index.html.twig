@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+	{% block stylesheets %}
+		{% stylesheets 'bundles/ivobaeasyslot/css/easyslotbundle.css' 'bundles/ivobaeasyslot/css/custom-theme/jquery-ui-1.8.21.custom.css' filter='cssrewrite' %}
+        <link type="text/css" rel="stylesheet" href="{{ asset_url }}" />
+		{% endstylesheets %}
+	{% endblock %}
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.21/jquery-ui.min.js"></script>
+	{% block javascripts %}
+		{% javascripts '@IvobaEasySlotBundle/Resources/public/js/jquery.labelwidth.js' '@IvobaEasySlotBundle/Resources/public/js/easyslotbundle.js' %}
+	<script type="text/javascript" src="{{ asset_url }}"></script>
+		{% endjavascripts %}
+	{% endblock %}
+        </head>
+        <body>
+            <div class="easyslot">
+                <h1>EasySlot Admin</h1>
+
+            {% for key, flash in app.session.getFlashes() %}
+                <div id="flash" class="{{ key }}">
+		{{ flash }}
+                    </div>
+	    {% endfor %}
+                    <input type="button" class="addBtn ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" value="Slot Hinzufügen" />
+                    <form method="POST" action="{{ path('IvobaEasySlotBundle_adminsave') }}">
+			<fieldset>
+                        <div id="accordion">
+                {% if slots %}        
+                    {% for key,slot in slots %}
+                        {% include 'IvobaEasySlotBundle::Partial/editslot.html.twig' %}  
+                    {% endfor %}
+                {% else %}
+                                <div class="ui-state-active noslots"> Keine Slots vorhanden!</div>
+                {% endif %}
+                        </div>
+			</fieldset>
+                            <input type="submit" value="Slots Speichern" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" />
+                        </form>
+                    {% include 'IvobaEasySlotBundle::Partial/newslot.html.twig' %}
+                    </div>
+                </body>
+            </html>
+

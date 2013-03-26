@@ -1,0 +1,9 @@
+<div class="slotmodel">
+    <h3><a href="#">Slot Neu</a></h3>
+    <div>
+	<small class="delnew">Slot Löschen</small>
+        {% set now = "now"|date('U') %}
+        <div><label>Url:</label> <input type="text" name="Collection[{{ now }}][url]" id="new_url" /></div>
+        <div><label>Title:</label> <input type="text" name="Collection[{{ now }}][title]" id="new_title" /></div>
+    </div>   
+</div>

@@ -1,0 +1,8 @@
+parameters:
+    ivoba_easy_slot.store.dir: %kernel.root_dir%/Resources/data/
+    ivoba_easy_slot.store.file: easyslot.php
+
+services:
+    ivoba.easyslot:
+        class: Ivoba\EasySlotBundle\Store
+        arguments: [%ivoba_easy_slot.store.dir%,%ivoba_easy_slot.store.file%]

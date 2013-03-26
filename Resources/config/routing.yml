@@ -1,0 +1,12 @@
+IvobaEasySlotBundle_admin:
+  pattern: /
+  defaults: { _controller: "IvobaEasySlotBundle:Store:index" }
+IvobaEasySlotBundle_admindel:
+  pattern: /delete/{key}
+  defaults: { _controller: "IvobaEasySlotBundle:Store:delete" }
+IvobaEasySlotBundle_adminsave:
+  pattern: /save
+  defaults: { _controller: "IvobaEasySlotBundle:Store:save" }
+IvobaEasySlotBundle_exportdb:
+    pattern:  /exportdb
+    defaults: { _controller: "IvobaEasySlotBundle:Store:export" }
