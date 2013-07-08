@@ -17,12 +17,12 @@ $(document).ready(function() {
         $( ".addBtn" ).click(function() { 
             $('#accordion').accordion("destroy");
             if($('.slot').length > 0){
-                $('.slotmodel').clone().insertBefore(".slot:first").removeClass('slotmodel').addClass('slot');
+                $('.slotmodel').clone().insertBefore(".slot:first").removeClass('slotmodel').addClass('slot').addClass('new');
             }
             else{
-                $('.slotmodel').clone().insertBefore(".noslots").removeClass('slotmodel').addClass('slot');	
+                $('.slotmodel').clone().insertBefore(".noslots").removeClass('slotmodel').addClass('slot').addClass('new');
             }
-
+            $('.slot.new').trigger('created');
             $('#accordion')
             .accordion({
                 header: '> div > h3',
@@ -37,7 +37,8 @@ $(document).ready(function() {
             $('#accordion').accordion({
                 header: '> div > h3',
                 heightStyle: "content",
-                collapsible: true
+                collapsible: true,
+                active: index
             });
             return false;
         });
