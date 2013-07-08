@@ -3,6 +3,6 @@
     <div>
         <div><label>Url:</label> <input type="text" name="Collection[{{ key }}][url]" id="{{ key }}" value="{{ slot.url }}" /></div>
         <div><label>Title:</label> <input type="text" name="Collection[{{ key }}][title]" value="{{ slot.title }}" /></div>
-        <small class="del"><a href="{{ path('IvobaEasySlotBundle_admindel', {'key': key }) }}">Slot Löschen</a></small>
+        <small class="del"><a href="{{ path('IvobaEasySlotBundle_admindel', {'key': key }) }}" class="delete-slot">{% trans %}Delete{% endtrans %}</a></small>
     </div>
 </div>

@@ -47,5 +47,30 @@ $(document).ready(function() {
     $('.saveBtn').click(function(){
         $('#teaserForm').submit();
     });
+    
+    $("a.delete-slot").click(function(e) {
+        e.preventDefault();
+        var targetUrl = $(this).attr("href");
+
+        $("#dialog").dialog({
+            buttons: {
+                "Confirm": function() {
+                    window.location.href = targetUrl;
+                },
+                "Cancel": function() {
+                    $(this).dialog("close");
+                }
+            }
+        });
+
+        $("#dialog").dialog("open");
+
+        return false;
+    });
+
+    $("#dialog").dialog({
+        autoOpen: false,
+        modal: true
+    });
 });
 
